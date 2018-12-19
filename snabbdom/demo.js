@@ -45,6 +45,7 @@ var vnode = h('div#container.two.classes', { on: { click: someFn } }, [
   h('a', { props: { href: '/foo' } }, "I'll take you places!")
 ]);
 // Patch into empty DOM element – this modifies the DOM as a side effect
+// 对比2个虚拟dom，然后更新，这里是element和虚拟dom
 patch(container, vnode);
 
 var newVnode = h('div#container.two.classes', { on: { click: anotherEventHandler } }, [
@@ -53,4 +54,5 @@ var newVnode = h('div#container.two.classes', { on: { click: anotherEventHandler
   h('a', { props: { href: '/bar' } }, "I'll take you places!")
 ]);
 // Second `patch` invocation
+// 对比2个虚拟dom，然后更新
 patch(vnode, newVnode); // Snabbdom efficiently updates the old view to the new state
