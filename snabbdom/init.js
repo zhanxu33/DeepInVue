@@ -1,4 +1,3 @@
-```
 export interface Module {
   pre: PreHook;
   create: CreateHook;
@@ -73,4 +72,3 @@ export function init(modules: Array<Partial<Module>>, domApi?: DOMAPI) {
     // ...
   };
 }
-```
